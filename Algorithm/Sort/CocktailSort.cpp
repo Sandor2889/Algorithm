@@ -11,7 +11,7 @@ int main()
     int evenCount = 0;  // 짝수 실행 수
     int oddCount = 0;   // 홀수 실행 수
     int temp;
-    bool flag = true;   // 정렬 상태 확인
+    bool flag = true;   // 정렬 중단 스위치
 
     // Cocktail sort 실행
     for (int idx = 0; idx < LENGTH; idx++)
