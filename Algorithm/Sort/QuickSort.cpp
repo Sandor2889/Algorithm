@@ -1,13 +1,14 @@
 #include <iostream>
 
-#define LENGTH 9 // ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+#define LENGTH 9 // ¹è¿­ÀÇ ±æÀÌ
 
 using namespace std;
 
 void quickSort(int* _data, int _start, int _end)
 {
-	// ï¿½ï¿½ï¿½Ò°ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
+	// ¿ø¼Ò°¡ 1°³ ÀÎ °æ¿ì
 	if (_start >= _end) { return; }
+
 	int pivot = _start;
 	int left = _start + 1;
 	int right = _end;
@@ -15,44 +16,44 @@ void quickSort(int* _data, int _start, int _end)
 
 	while (left <= right)
 	{
-		// pivot ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ Ã£ï¿½ï¿½
+		// pivot º¸´Ù Å« ¼ö Ã£±â
 		while (_data[pivot] > _data[left] && left < _end)
 		{
 			left++;
 		}
 
-		// pivot ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½
+		// pivot º¸´Ù ÀÛÀº ¼ö Ã£±â
 		while (_data[pivot] < _data[right] && right > _start)
 		{
 			right--;
 		}
 
-		// ï¿½Ú¸ï¿½ ï¿½ï¿½È¯
-		if (left >= right)	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ÀÚ¸® ±³È¯
+		if (left >= right)	// ¾ù°¥·ÈÀ» ¶§ ¶Ç´Â °°À»¶§
 		{
 			temp = _data[pivot];
 			_data[pivot] = _data[right];
 			_data[right] = temp;
 		}
-		else	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½
+		else	// ¾ù°¥¸®Áö ¾Ê¾ÒÀ»¶§
 		{
 			temp = _data[left];
 			_data[left] = _data[right];
 			_data[right] = temp;
 		}
 	}
-	quickSort(_data, _start, right - 1);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-	quickSort(_data, right + 1, _end);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	quickSort(_data, _start, right - 1);	// ÁÂÃø Á¤·Ä
+	quickSort(_data, right + 1, _end);	// ¿ìÃø Á¤·Ä
 }
 
 int main()
 {
 	int dataArr[LENGTH] = { 2, 5, 7, 8, 4, 9, 3, 1, 6 };
 
-	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// Äü Á¤·Ä ½ÇÇà
 	quickSort(dataArr, 0, LENGTH - 1);
 
-	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	// °á°ú Ãâ·Â
 	string result;
 	for (int idx = 0; idx < 9; idx++)
 	{
